@@ -13,7 +13,7 @@ const Login = () => {
       console.log("Telegramdan kelgan ma'lumot:", user);
 
       try {
-        const response = await fetch('http://localhost:5000/api/auth/telegram', {
+        const response = await fetch('http://localhost:3000/api/auth/telegram', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(user),
@@ -39,7 +39,7 @@ const Login = () => {
     // 2. Telegram Widget skriptini yuklash
     const script = document.createElement('script');
     script.src = "https://telegram.org/js/telegram-widget.js?22";
-    script.setAttribute('data-telegram-login', 'SizningBotUsername'); // @ belgisiz yozing
+    script.setAttribute('data-telegram-login', 'auth_tg_robot'); // @ belgisiz yozing
     script.setAttribute('data-size', 'large');
     script.setAttribute('data-onauth', 'onTelegramAuth(user)');
     script.setAttribute('data-request-access', 'write');
